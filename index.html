@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Offline/Online Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Hey We are here to serve you!!!!</h1>
+    <p id="check" style="text-align: center;">Yet not sure!!!!</p>
+
+    <div contenteditable="true">
+            This text can be edited by the user.
+          </div>
+    <script>
+        
+        const check = document.getElementById('check');
+    if(navigator.onLine){
+        check.textContent = "Yeah we are online";
+        check.style.color = "green";
+    }
+    //Add event listener
+
+    window.addEventListener('online', function(){
+        check.textContent = "Yeah we are online";
+        check.style.color = "green";
+    });
+
+    window.addEventListener('offline', function(){
+        check.textContent = "We are in offline!!!!";
+        check.style.color = "blue";
+    });
+
+    </script>
+</body>
+</html>
